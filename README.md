@@ -2,6 +2,26 @@
 
 This is a simple SentencePiece-style subword tokenization implementation in Go. It trains a unigram-based model from a given corpus and encodes text into integer token IDs, handling unknown words <unk>.
 
+SentencePiece is an unsupervised text tokenizer and detokenizer primarily used for subword segmentation. Unlike traditional word-based tokenizers, SentencePiece treats text as a raw byte stream, allowing it to handle different languages, character sets, and scripts without requiring spaces as word delimiters.
+
+It is widely used in natural language processing (NLP) tasks to create more efficient tokenization strategies, especially for training large language models (LLMs).
+Many state-of-the-art large language models (LLMs) and NLP architectures use SentencePiece for tokenization, including:
+
+Google’s Models:
+
+- Gemma – Google’s lightweight open-weight LLM, inspired by Gemini, uses SentencePiece for tokenization.
+- T5 (Text-to-Text Transfer Transformer) – Uses SentencePiece for text preprocessing.
+- ALBERT (Google’s Efficient BERT variant)
+
+OpenAI & Meta Models:
+
+- Llama (Meta’s LLM) – Uses SentencePiece to handle multilingual text efficiently.
+
+Other Models & Frameworks:
+
+- MarianMT (Multilingual Machine Translation by Microsoft)
+- XLM-R (Cross-lingual Language Model by Facebook/Meta)
+
 ## Features
 
 - Train a unigram-based vocabulary from a text corpus
@@ -11,7 +31,6 @@ This is a simple SentencePiece-style subword tokenization implementation in Go. 
 - Prevent infinite loops by ensuring forward progress
 
 ## Project Structure
-
 ```
 📦 sentencepiece-go
 ├── 📄 corpus.txt # Sample corpus file
