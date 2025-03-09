@@ -33,7 +33,6 @@ go version
 ### 2. Clone the Repository
 
 ```
-
 git clone https://github.com/Yosuamuliawan19/sentencepiece-go
 cd sentencepiece-go
 ```
@@ -41,22 +40,23 @@ cd sentencepiece-go
 ### 3. Prepare a Corpus File
 
 Create a corpus.txt file with sample sentences:
-
+```
 nano corpus.txt
-
+```
 Example content:
-
+```
 hello world
 hello sentencepiece
 hello encoding
 world is beautiful
 natural language processing is fun
-
-Save (CTRL+X, then Y, then Enter).
+```
 
 ### 4. Run the Tokenizer
 
-go run sentencepiece.go
+```
+go run main.go
+```
 
 Sample Output
 
@@ -78,27 +78,34 @@ Explanation:
 
 Training the Model
 
-The TrainUnigramModel() function: 1. Reads the corpus and counts word frequencies. 2. Merges least probable subwords until vocabSize is reached. 3. Adds <unk> token for unknown words.
+The TrainUnigramModel() function: 
+1. Reads the corpus and counts word frequencies.
+2. Merges least probable subwords until vocabSize is reached.
+3. Adds <unk> token for unknown words.
 
 ### Encoding Text
 
-• Finds the longest matching subword in the vocabulary.
-• If no match is found, assigns <unk> and moves forward character by character to avoid infinite loops.
+- Finds the longest matching subword in the vocabulary.
+- If no match is found, assigns <unk> and moves forward character by character to avoid infinite loops.
 
 ### Decoding Tokens
 
-• Converts integer token IDs back into words.
-• Handles <unk> tokens properly.
+- Converts integer token IDs back into words.
+- Handles <unk> tokens properly.
 
 ## Next Improvements
 
-• Implement Byte-Pair Encoding (BPE) for better subword merging
-• Save & Load pretrained vocab for reuse
-• Implement subword splitting for finer granularity
+- Implement Byte-Pair Encoding (BPE) for better subword merging
+- Save & Load pretrained vocab for reuse
+- Implement subword splitting for finer granularity
 
 ## Contributing
 
 Contributions are welcome! Feel free to fork, improve, and submit a PR.
+
+## Corpus included
+
+Corpus included an excerpt from Little Women source from https://www.gutenberg.org/cache/epub/37106/pg37106.txt
 
 ## License
 
